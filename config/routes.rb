@@ -1,7 +1,6 @@
 Ohforgetfulme::Application.routes.draw do
   root :to => "reminds#new"
   resources :reminds
-  get "runreminders" => "reminds#run"
   # match 'reminders' => 'reminders#create', :as => 'reminders', :via => :post
 
 
