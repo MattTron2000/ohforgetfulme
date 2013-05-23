@@ -11,6 +11,9 @@ class RemindsController < ApplicationController
 
   # GET /reminds
   # GET /reminds.json
+  def run
+    Remind.findreminderstodo(@remind)
+  end
   def index
     @reminds = Remind.all
 

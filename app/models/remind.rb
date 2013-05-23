@@ -1,13 +1,13 @@
 
 class Remind < ActiveRecord::Base
-    def findreminderstodo(reminds)
-        reminds.each do |name|
-            if date.now > reminds.date
-                if time.now > reminds.time
-            
+    def self.findreminderstodo(remind)
+        remind.each do |remind|
+            if date.now > remind.date
+                if remind.done == nil
+                    ReminderMailer.reminder_email(remind)
+                    remind.done = true
+                end
+            end
         end
-
-    end
-
-        
+    end 
 end
