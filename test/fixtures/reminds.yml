@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  date: 2013-05-22
+  time: 2013-05-22 13:00:34
+  contactmethod: 1
+  contactinfo: MyString
+  message: MyText
+  timecreated: 2013-05-22 13:00:34
+
+two:
+  name: MyString
+  date: 2013-05-22
+  time: 2013-05-22 13:00:34
+  contactmethod: 1
+  contactinfo: MyString
+  message: MyText
+  timecreated: 2013-05-22 13:00:34

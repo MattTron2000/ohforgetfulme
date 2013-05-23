@@ -1,0 +1,42 @@
+<div class = "field">
+<p id="notice" ><%= notice %></p>
+<h2> New Reminder Created</h2>
+<p>
+  <h3>Name:
+  <b><%= @remind.name %></b>
+</h3>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @remind.date %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @remind.time %>
+</p>
+
+<p>
+  <strong>Contactmethod:</strong>
+  <%= @remind.contactmethod %>
+</p>
+
+<p>
+  <strong>Contactinfo:</strong>
+  <%= @remind.contactinfo %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @remind.message %>
+</p>
+
+<p>
+  <strong>Timecreated:</strong>
+  <%= @remind.timecreated %>
+</p>
+
+<%= link_to 'Edit', edit_remind_path(@remind) %> |
+<%= link_to 'Back', reminds_path %>
+</div>

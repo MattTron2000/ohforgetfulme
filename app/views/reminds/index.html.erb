@@ -1,0 +1,39 @@
+<h1>Listing reminds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Contactmethod</th>
+      <th>Contactinfo</th>
+      <th>Message</th>
+      <th>Timecreated</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reminds.each do |remind| %>
+      <tr>
+        <td><%= remind.name %></td>
+        <td><%= remind.date %></td>
+        <td><%= remind.time %></td>
+        <td><%= remind.contactmethod %></td>
+        <td><%= remind.contactinfo %></td>
+        <td><%= remind.message %></td>
+        <td><%= remind.timecreated %></td>
+        <td><%= link_to 'Show', remind %></td>
+        <td><%= link_to 'Edit', edit_remind_path(remind) %></td>
+        <td><%= link_to 'Destroy', remind, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Remind', new_remind_path %>
