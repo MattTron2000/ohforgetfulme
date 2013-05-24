@@ -1,4 +1,4 @@
-# require 'rubygems'
+require 'rubygems'
 # require 'rufus/scheduler'
 # scheduler = Rufus::Scheduler.start_new
 
@@ -11,6 +11,11 @@ class RemindsController < ApplicationController
 
   # GET /reminds
   # GET /reminds.json
+  def check
+    # Remind.find_reminders_todo
+    @sent = Remind.find_reminders_todo
+  end
+
   def index
     @reminds = Remind.all
 
