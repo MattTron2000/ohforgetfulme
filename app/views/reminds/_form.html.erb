@@ -12,23 +12,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label "Reminder:" %><br>
+    What would you like to remind yourself about? <br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :date %><br>
+    What date would you like the reminder on?<br>
     <%= f.date_select :date %>
-  </div>
-  <div class="field">
-
-    You would like to be contacted via:
+<br><br>
+    How would you like to be contacted?
     <table>
     <tr><td><%= f.check_box"contactmethod"%></td><td><%= f.label :contactmethod ,'Email' %></td>
     <td><%= f.text_field :contactinfo , :placeholder => "bigbtymama@OhForgetful.Me", :size => 25%></td></tr>
     Marker
-  </table>
-  </div>
-  <div class="field">
+  </table><br>
     <%= f.label "Message for future you:" %><br>
     <%= f.text_area :message %>
   </div>
