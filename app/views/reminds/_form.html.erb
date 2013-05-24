@@ -12,26 +12,32 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label "Reminder:" %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
     <%= f.label :date %><br>
-    <%= f.date_select :date %><br>
-    <%= f.label :time %><br>
-    <%= f.time_select :time %>
+    <%= f.date_select :date %>
   </div>
   <div class="field">
-    
-    <%= f.radio_button "contactmethod","1"  %><%= f.label :contactmethod ,'Email' %><br>
-    <%= f.radio_button "contactmethod","2"  %><%= f.label :contactmethod ,'Text' %><br>
-    <%= f.radio_button "contactmethod","4"  %><%= f.label :contactmethod ,'Phone' %><br>
-    <%= f.label :contactinfo %><br>
-    <%= f.text_field :contactinfo %><br>
-    
+
+    You would like to be contacted via:
+    <table>
+    <tr><td><%= f.check_box"contactmethod"%></td><td><%= f.label :contactmethod ,'Email' %></td>
+    <td><%= f.text_field :contactinfo , :placeholder => "bigbtymama@OhForgetful.Me", :size => 25%></td></tr>
+<!-- 
+  <tr><td><%= f.check_box"contactemail"%></td><td><%= f.label :contactemail ,'Email' %></td>
+    <td><%= f.text_field :emailaddress , :placeholder => "bigbtymama@OhForgetful.Me", :size => 25%></td></tr>
+    <tr><td><%= f.check_box "contacttext"%></td><td><%= f.label :contacttext ,'Text' %></td>
+      <td><%= f.text_field :textnumber, :size => 25 %></td></tr>
+
+    <tr><td><%= f.check_box "contactphone"%></td><td><%= f.label :contactphone ,'Phone' %></td>
+    <td><%= f.text_field :phonenumber, :size => 25 %></td></tr> -->
+
+  </table>
   </div>
   <div class="field">
-    <%= f.label :message %><br>
+    <%= f.label "Message for future you:" %><br>
     <%= f.text_area :message %>
   </div>
   <div class="field">

@@ -4,15 +4,15 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
   </head>
   <body>
-    <h1>Welcome to example.com, holder of <%= @remind.contactinfo %></h1>
+    <h1>Welcome to <%= @url %>, holder of <%= @remind.contactinfo %></h1>
     <p>
       You have successfully setup a reminder
     </p>
     <p>
-      The reminder name is <%= @remind.name %>
+      The reminder name is: <b><%= @remind.name %></b>
     </p>
     <p>
-      You will be reminded on 
+      You will be reminded on <%= @remind.date.to_formatted_s(:long_ordinal) %></p><br>
     <p>Thanks for joining and have a great day!</p>
     </body>
     </html>

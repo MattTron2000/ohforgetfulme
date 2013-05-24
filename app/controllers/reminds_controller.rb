@@ -39,13 +39,11 @@ class RemindsController < ApplicationController
   # POST /reminds.json
   def create
     @remind = Remind.new(remind_params)
-    # ReminderMailer.welcome_email(@remind).deliver
-    
     respond_to do |format|
       if @remind.save
 
       # send a welcome email after save
-         # ReminderMailer.welcome_email(@remind).deliver
+         ReminderMailer.welcome_email(@remind).deliver
         format.html { redirect_to @remind, notice: 'Reminder was successfully created.' }
         format.json { render action: 'show', status: :created, location: @remind }
       else

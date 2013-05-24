@@ -8,7 +8,8 @@ class ReminderMailer < ActionMailer::Base
 
     def reminder_email(remind)
         @remind = remind
-            @url = "http://ohforgetful.me"
+        @url = "http://ohforgetful.me"
+        @date = @remind.date.to_formatted_s(:long_ordinal)
         mail(:to =>remind.contactinfo, :subject => remind.name+" reminder from OhForgetful.Me")
     end
 end
