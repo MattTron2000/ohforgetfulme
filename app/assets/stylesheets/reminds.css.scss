@@ -4,7 +4,13 @@
 
 html {
  
-    font-family: "Helvetica", "Calibri";
+    font-family: "Helvetica";
+
+}
+
+
+html,#heading, #footer, .field, .middle{
+    background:#F7F7F7;
 }
 
 #heading, #footer {
@@ -12,6 +18,11 @@ html {
     margin-right:auto;
     width: 80%;
     padding: 10px;
+}
+
+#heading {
+    padding-left: 35px;
+    padding-right: 35px;
 }
 
 #footer {
@@ -30,15 +41,22 @@ html {
     border-right: 1.5px solid black;
 
 }
-h1 {
-    letter-spacing:-2.5px;
+.form-button {
+    color: #000000;
 }
-.middle h2 {
+.field h1 {
     text-align: center;
 }
-
-.field h2 {
-    text-align: center;
+#error_explanation {
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:45px;
+}
+//scrunches letters together to make it feel like a logo
+#heading h1 {
+    letter-spacing:-3px;
 }
 
-
+#heading h3 {
+   letter-spacing:-0.5px;
+}

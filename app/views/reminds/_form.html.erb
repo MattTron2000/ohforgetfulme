@@ -25,14 +25,14 @@
     <td><%= f.text_field :contactinfo , :placeholder => "bigbtymama@OhForgetful.Me", :size => 25%></td></tr>
     Marker
   </table><br>
-    <%= f.label "Message for future you:" %><br>
+    <%= f.label "The message for future you:" %><br>
     <%= f.text_area :message %>
   </div>
   <div class="field">
 
   <div class="actions" align = "center">
     <br>
-    <%= f.submit %>
+    <%= f.submit "   Set Reminder   ", :class=>"form-button"%>
   </div>
 </div>
 <% end %>
