@@ -1,11 +1,3 @@
-require 'rubygems'
-# require 'rufus/scheduler'
-# scheduler = Rufus::Scheduler.start_new
-
-# scheduler.in "30m"  do 
-#     Remind.dowork    
-# end
-    
 class RemindsController < ApplicationController
   before_action :set_remind, only: [:show, :edit, :update, :destroy]
 
@@ -39,11 +31,12 @@ class RemindsController < ApplicationController
   # POST /reminds.json
   def create
     @remind = Remind.new(remind_params)
+    passer = @remind
+    #Send welcome email if conditions pass
+      Remind.welcome_email(passer)
     respond_to do |format|
       if @remind.save
-
-      # send a welcome email after save
-         ReminderMailer.welcome_email(@remind).deliver
+      
         format.html { redirect_to @remind, notice: 'Reminder was successfully created.' }
         format.json { render action: 'show', status: :created, location: @remind }
       else
@@ -85,6 +78,7 @@ class RemindsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def remind_params
-      params.require(:remind).permit(:name, :date, :time, :contactmethod, :contactinfo, :message, :timecreated)
+      params.require(:remind).permit(:name, :date, :time, :contactemail, :contacttext, :contactphone,
+       :email, :textnumber, :phonenumber, :message, :done )
     end
 end

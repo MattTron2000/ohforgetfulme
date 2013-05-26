@@ -11,29 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130523050648) do
-
-  create_table "reminders", force: true do |t|
-    t.date     "date"
-    t.time     "time"
-    t.integer  "remindermethod"
-    t.text     "contact"
-    t.text     "message"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20130525234933) do
 
   create_table "reminds", force: true do |t|
     t.string   "name"
     t.date     "date"
     t.time     "time"
-    t.integer  "contactmethod"
-    t.string   "contactinfo"
+    t.boolean  "contactemail"
+    t.boolean  "contacttext"
+    t.boolean  "contactphone"
+    t.string   "email"
+    t.integer  "textnumber"
+    t.integer  "phonenumber"
     t.text     "message"
-    t.datetime "timecreated"
+    t.boolean  "done"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "done"
   end
 
 end

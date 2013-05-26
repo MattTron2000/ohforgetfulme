@@ -1,6 +1,4 @@
-
 class Remind < ActiveRecord::Base
-    validates :contactinfo, :presence => true
     validates :name , :presence => true
     validates :date, :presence => true
 
@@ -18,4 +16,21 @@ class Remind < ActiveRecord::Base
         end  
         return sent
     end
+
+    def self.welcome_email(passedRemind)
+        found = false
+        Remind.all.each do |table|
+            if passedRemind.email == table.email
+                found = true
+            end
+        end
+        if found == false
+            ReminderMailer.welcome_email(passedRemind).deliver
+        end
+        return found
+    end
+
 end
+# Scheduler.every "1s" do
+#     Remind.find_reminders_todo
+# end

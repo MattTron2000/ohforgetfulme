@@ -7,6 +7,14 @@
 </h3>
 </p>
 
+<% Remind.find(:id) do |r| %>
+  <% if r != nil then%>
+    <p>
+      <strong><%= r.inspect %></strong>
+      <%= r %>
+    </p>
+  <%end%>
+<%end%>
 <p>
   <strong>Date:</strong>
   <%= @remind.date %>
@@ -18,24 +26,17 @@
 </p>
 
 <p>
-  <strong>Contactmethod:</strong>
-  <%= @remind.contactmethod %>
+  <strong>Email:</strong>
+  <%= @remind.email %>
 </p>
 
 <p>
-  <strong>Contactinfo:</strong>
-  <%= @remind.contactinfo %>
-</p>
 
 <p>
   <strong>Message:</strong>
   <%= @remind.message %>
 </p>
 
-<p>
-  <strong>Timecreated:</strong>
-  <%= @remind.timecreated %>
-</p>
 
 <%= link_to 'Edit', edit_remind_path(@remind) %> |
 <%= link_to 'Back', reminds_path %>

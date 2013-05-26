@@ -3,12 +3,12 @@ class ReminderMailer < ActionMailer::Base
     def welcome_email(remind)
         @url  = "http://ohforgetful.me"
         @remind = remind
-        mail(:to => @remind.contactinfo, :subject => "Welcome to Oh Forgetful Me!")
+        mail(:to =>@remind.email, :subject => "Welcome to Oh Forgetful Me!")
     end
 
     def reminder_email(remind)
         @remind = remind
         @url = "http://ohforgetful.me"
-        mail(:to =>remind.contactinfo, :subject => remind.name+" reminder from OhForgetful.Me")
+        mail(:to =>@remind.email, :subject =>@remind.name+" reminder from OhForgetful.Me")
     end
 end
