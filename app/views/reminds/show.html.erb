@@ -6,23 +6,9 @@
   <b><%= @remind.name %></b>
 </h3>
 </p>
-
-<% Remind.find(:id).each do |r| %>
-  <% if r != nil then%>
-    <p>
-      <strong><%= r.inspect %></strong>
-      <%= r %>
-    </p>
-  <%end%>
-<%end%>
 <p>
   <strong>Date:</strong>
   <%= @remind.date %>
-</p>
-
-<p>
-  <strong>Time:</strong>
-  <%= @remind.time %>
 </p>
 
 <p>
@@ -38,6 +24,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_remind_path(@remind) %> |
-<%= link_to 'Back', reminds_path %>
+<%= link_to 'New', "/" %>
 </div>

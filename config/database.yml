@@ -19,7 +19,11 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: mysql2
+  encoding: utf8
+  database: ohforget_rails
   pool: 5
+  username: ohforget_root
+  password: railsisawesome123
+  socket: /var/run/mysqld/mysqld.sock
   timeout: 5000

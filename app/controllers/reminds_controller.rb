@@ -1,3 +1,4 @@
+
 class RemindsController < ApplicationController
   before_action :set_remind, only: [:show, :edit, :update, :destroy]
 
@@ -8,14 +9,14 @@ class RemindsController < ApplicationController
     @sent = Remind.find_reminders_todo
   end
 
-  def index
-    @reminds = Remind.all
-
-  end
-
   # GET /reminds/1
   # GET /reminds/1.json
   def show
+    if URI(request.referer).path == "/"
+      print "From new"
+    else
+      redirect_to :action => "new"
+    end
   end
 
   # GET /reminds/new
@@ -24,8 +25,7 @@ class RemindsController < ApplicationController
   end
 
   # GET /reminds/1/edit
-  def edit
-  end
+
 
   # POST /reminds
   # POST /reminds.json
@@ -68,6 +68,7 @@ class RemindsController < ApplicationController
       format.html { redirect_to reminds_url }
       format.json { head :no_content }
     end
+
   end
 
   private
@@ -78,7 +79,6 @@ class RemindsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def remind_params
-      params.require(:remind).permit(:name, :date, :time, :contactemail, :contacttext, :contactphone,
-       :email, :textnumber, :phonenumber, :message, :done )
+      params.require(:remind).permit(:name, :date, :time,:email, :message, :done )
     end
 end

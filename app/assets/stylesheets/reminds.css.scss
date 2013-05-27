@@ -29,8 +29,12 @@ html,#heading, #footer, .field, .middle, #heading-span{
 #heading {
     padding-left: 35px;
     padding-right: 35px;
-}
 
+}
+.link:hover, .link:visited, .link{
+    color: #000000 !important;
+    text-decoration: none !important;
+}
 #footer {
     border-top:solid grey 1.5px;
     margin-top: 75px;

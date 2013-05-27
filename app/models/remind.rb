@@ -1,6 +1,8 @@
+
 class Remind < ActiveRecord::Base
     validates :name , :presence => true
     validates :date, :presence => true
+    validates :email, :presence => true
 
     def self.find_reminders_todo
         sent = 0
@@ -31,6 +33,3 @@ class Remind < ActiveRecord::Base
     end
 
 end
-# Scheduler.every "1s" do
-#     Remind.find_reminders_todo
-# end
