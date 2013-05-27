@@ -7,7 +7,7 @@
 </h3>
 </p>
 
-<% Remind.find(:id) do |r| %>
+<% Remind.find(:id).each do |r| %>
   <% if r != nil then%>
     <p>
       <strong><%= r.inspect %></strong>

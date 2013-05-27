@@ -19,20 +19,16 @@
     What date would you like the reminder on?<br>
     <%= f.date_select :date %>
 <br><br>
-    How would you like to be contacted?
-    <table>
-    <tr><td><%= f.check_box"contactemail"%></td><td><%= f.label :contactemail ,'Email Address' %></td>
-    <td><%= f.text_field :email , :placeholder => "Ephiphany@OhForgetful.Me", :size => 25%></td></tr>
+    How would you like to be contacted? <br>
     
-    <tr><td><%= f.check_box"contacttext"%></td><td><%= f.label :contacttext ,'Texting phone number' %></td>
-    <td><%= f.text_field :textnumber, :size => 25%></td></tr>
-
-    <tr><td><%= f.check_box"contactphone"%></td><td><%= f.label :contactphone ,'Phone number to call' %></td>
-    <td><%= f.text_field :phonenumber , :size => 25%></td></tr>
-  </table><br>
+      <%= f.label :contactemail ,'Email Address' %><br>
+      <%= f.text_field :email , :placeholder => "Chandra@OhForgetful.Me", :size => 25%>
+    <br><br>
+   
     <%= f.label "The message for future you:" %><br>
     <%= f.text_area :message %>
   </div>
+</div>
   <div class="field">
 
   <div class="actions" align = "center">

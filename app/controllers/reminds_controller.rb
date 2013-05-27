@@ -33,7 +33,7 @@ class RemindsController < ApplicationController
     @remind = Remind.new(remind_params)
     passer = @remind
     #Send welcome email if conditions pass
-      Remind.welcome_email(passer)
+    Remind.welcome_email(passer)
     respond_to do |format|
       if @remind.save
       

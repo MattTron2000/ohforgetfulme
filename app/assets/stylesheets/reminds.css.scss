@@ -2,14 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-html {
+body {
  
     font-family: "Helvetica";
 
 }
 
 
-html,#heading, #footer, .field, .middle{
+html,#heading, #footer, .field, .middle, #heading-span{
     background:#F7F7F7;
 }
 
@@ -18,6 +18,12 @@ html,#heading, #footer, .field, .middle{
     margin-right:auto;
     width: 80%;
     padding: 10px;
+}
+
+#heading-span {
+    width:100%;
+    height:20px;
+
 }
 
 #heading {
